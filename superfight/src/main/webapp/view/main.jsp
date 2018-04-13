@@ -18,12 +18,12 @@
             #superfight{
                 font-family: "Impact";
             }
-            #abouttext,#statstext,#fighttext,#nicktext{
+            #abouttext,#classtext,#fighttext,#nicktext{
                 font-family: "Arial Black";
             }
             #avatar{
-                width:15%;
-                height: 16%;
+                width:140px;
+                height: 140px;
             }
             #fightvalue,#classvalue{
                 color: #c9302c;
@@ -77,17 +77,7 @@
         <div class="container hidden" id="statsplace">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img id="avatar" src="D:\Изображения\del.jpg" alt="image" class="img-thumbnail">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" id="picture1" class="btn btn-default">1</button>
-                        <button type="button" id="picture2" class="btn btn-default">2</button>
-                        <button type="button" id="picture3" class="btn btn-default">3</button>
-                        <button type="button" id="picture4" class="btn btn-default">4</button>
-                    </div>
+                    <img id="avatar" src="../images/bg_main.jpg" alt="image" class="img-thumbnail">
                 </div>
             </div>
             <div class="row">
@@ -178,20 +168,6 @@
             $('#stats').click(function () {
                 $('#aboutplace').addClass('hidden');
                 $('#statsplace').removeClass('hidden');
-            });
-        </script>
-        <script>
-            $('#picture1').click(function () {
-                $('#avatar').attr("src","../images/bg_main.jpg")
-            });
-            $('#picture2').click(function () {
-                $('#avatar').attr("src","../images/bg_test.jpg")
-            });
-            $('#picture3').click(function () {
-                $('#avatar').attr("src","../images/choose.jpg")
-            });
-            $('#picture4').click(function () {
-                $('#avatar').attr("src","../images/for_the_throne.jpg")
             });
         </script>
         <script>
