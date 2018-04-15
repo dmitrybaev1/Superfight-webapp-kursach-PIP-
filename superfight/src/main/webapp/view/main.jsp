@@ -1,5 +1,5 @@
-<!--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>-->
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <link href="../css/bootstrap.css" rel="stylesheet">

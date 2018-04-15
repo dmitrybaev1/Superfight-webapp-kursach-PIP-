@@ -1,1 +1,5 @@
 pip\coursework\superfight\StartController.class
+pip\coursework\superfight\UserRepository.class
+pip\coursework\superfight\LoginController.class
+pip\coursework\superfight\SuperfightApplication.class
+pip\coursework\superfight\User.class

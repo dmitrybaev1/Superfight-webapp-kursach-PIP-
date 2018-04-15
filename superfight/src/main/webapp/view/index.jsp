@@ -29,17 +29,16 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="login">
-                    <form class="form-inline">
+                    <form method="post" action="/login" class="form-inline">
                         <br>
                         <p class="text-center">
-                            <input type="text" required class="form-control" id="InputLogin" placeholder="Логин">
-                            <input type="password" required class="form-control" id="InputPassword" placeholder="Пароль">
+                            <input type="text" name="login" required class="form-control" id="InputLogin" placeholder="Логин"></input>
+                            <input type="password" name="password" required class="form-control" id="InputPassword" placeholder="Пароль"></input>
                             <button type="submit" id="signin" class="btn btn-primary">Вход</button>
                             <!-- Триггер кнопка модали-->
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                                 Зарегистрироваться
                             </button>
-
                         </p>
                     </form>
                 </div>
@@ -55,7 +54,7 @@
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form role="form" class="form-horizontal">
+                    <form method="post" action="/reg" role="form" class="form-horizontal">
                     <!-- Заголовок модального окна -->
                     <div class="modal-header">
                         <button type="button" id="krestik" class="close" data-dismiss="modal">×</button>
@@ -80,7 +79,7 @@
                                 <div class="col-xs-6">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        <input type="email" id="InputEmailReg" class="form-control" required="required" name="email">
+                                        <input type="email" id="InputEmailReg" class="form-control" required="required" name="mail">
                                     </div>
                                     <span class="glyphicon form-control-feedback"></span>
                                 </div>
