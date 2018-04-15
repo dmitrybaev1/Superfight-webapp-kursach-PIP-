@@ -18,16 +18,20 @@
             #superfight{
                 font-family: "Impact";
             }
-            #abouttext,#classtext,#fighttext,#nicktext{
+            #abouttext,#classtext,#fighttext,#nicktext,.herostats{
                 font-family: "Arial Black";
             }
             #avatar{
                 width:140px;
                 height: 140px;
+                margin-right: 14px;
             }
             #fightvalue,#classvalue{
                 color: #c9302c;
                 font-family: "Arial Black";
+            }
+            #avatar-margin{
+
             }
         </style>
     </head>
@@ -76,8 +80,11 @@
 
         <div class="container hidden" id="statsplace">
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-7 text-right" id="avatar-margin">
                     <img id="avatar" src="../images/bg_main.jpg" alt="image" class="img-thumbnail">
+                </div>
+                <div class="col-md-5 text-right">
+                    <button class="btn btn-danger">Удалить профиль</button>
                 </div>
             </div>
             <div class="row">
@@ -117,44 +124,60 @@
             </div>
             <!--Герой 1-->
             <div class="row">
-                <div class="col-md-12"><button type="button" id="hero1" class="btn btn-default btn-lg btn-block">Герой 1 <span id="glyph1" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
+                <div class="col-md-12"><button type="button" id="hero1" class="btn btn-default btn-lg btn-block">Супермен <span id="glyph1" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
                 <div id="hero1cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        Hero 1
+                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <p class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
             <br>
             <!--Герой 2-->
             <div class="row">
-                <div class="col-md-12"><button type="button" id="hero2" class="btn btn-default btn-lg btn-block">Герой 2 <span id="glyph2" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
+                <div class="col-md-12"><button type="button" id="hero2" class="btn btn-default btn-lg btn-block">Бэтмен <span id="glyph2" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
                 <div id="hero2cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        Hero 2
+                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <p class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
             <br>
             <!--Герой 3-->
             <div class="row">
-                <div class="col-md-12"><button type="button" id="hero3" class="btn btn-default btn-lg btn-block">Герой 3 <span id="glyph3" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
+                <div class="col-md-12"><button type="button" id="hero3" class="btn btn-default btn-lg btn-block">Человек-паук <span id="glyph3" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
                 <div id="hero3cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        Hero 3
+                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <p class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
             <br>
             <!--Герой 4-->
             <div class="row">
-                <div class="col-md-12"><button type="button" id="hero4" class="btn btn-default btn-lg btn-block">Герой 4 <span id="glyph4" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
+                <div class="col-md-12"><button type="button" id="hero4" class="btn btn-default btn-lg btn-block">Халк <span id="glyph4" class="glyphicon glyphicon glyphicon-chevron-down"></span></button></div>
                 <div id="hero4cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        Hero 4
+                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <p class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>

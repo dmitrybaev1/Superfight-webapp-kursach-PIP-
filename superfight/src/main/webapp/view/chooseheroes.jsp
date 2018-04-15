@@ -32,7 +32,10 @@
             height: 140px;
         }
         .otstup{
-            height:15%;
+            height:150px;
+        }
+        .heronames{
+            font-family: "Arial Black";
         }
     </style>
 </head>
@@ -52,22 +55,26 @@
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="userhero" value="hero1" checked>
                     <br>
-                    <img id="user1pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="user1pict" class="heroes img-thumbnail center-block" src="../images/superman.jpg">
+                    <p class="heronames">Супермен</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="userhero" value="hero2">
                     <br>
-                    <img id="user2pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="user2pict" class="heroes img-thumbnail center-block" src="../images/batman.jpg">
+                    <p class="heronames">Бэтмен</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="userhero" value="hero3">
                     <br>
-                    <img id="user3pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="user3pict" class="heroes img-thumbnail center-block" src="../images/spiderman.jpg">
+                    <p class="heronames">Человек-паук</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="userhero" value="hero4">
                     <br>
-                    <img id="user4pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="user4pict" class="heroes img-thumbnail center-block" src="../images/hulk.jpg">
+                    <p class="heronames">Халк</p>
                 </div>
             </div>
             <div class="row">
@@ -77,22 +84,26 @@
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="enemyhero" value="hero1" checked>
                     <br>
-                    <img id="enemy1pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="enemy1pict" class="heroes img-thumbnail center-block" src="../images/superman.jpg">
+                    <p class="heronames">Супермен</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="enemyhero" value="hero2">
                     <br>
-                    <img id="enemy2pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="enemy2pict" class="heroes img-thumbnail center-block" src="../images/batman.jpg">
+                    <p class="heronames">Бэтмен</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="enemyhero" value="hero3">
                     <br>
-                    <img id="enemy3pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="enemy3pict" class="heroes img-thumbnail center-block" src="../images/spiderman.jpg">
+                    <p class="heronames">Человек-паук</p>
                 </div>
                 <div class="col-md-3 text-center">
                     <input class="text-center" type="radio" name="enemyhero" value="hero4">
                     <br>
-                    <img id="enemy4pict" class="heroes img-thumbnail center-block" src="../images/bg_main.jpg">
+                    <img id="enemy4pict" class="heroes img-thumbnail center-block" src="../images/hulk.jpg">
+                    <p class="heronames">Халк</p>
                 </div>
             </div>
             <div class="herotitle row">
