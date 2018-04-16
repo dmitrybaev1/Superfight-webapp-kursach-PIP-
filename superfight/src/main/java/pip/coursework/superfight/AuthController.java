@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class LoginController {
+public class AuthController {
     User user;
     Hero superman;
     Hero batman;
@@ -68,6 +68,11 @@ public class LoginController {
         modelAndView = getAttrs(modelAndView);
         modelAndView.setViewName("main");
         return modelAndView;
+    }
+    @RequestMapping(value = "/quit",method = RequestMethod.POST)
+    public String quit(HttpSession session){
+        session.invalidate();
+        return "index";
     }
     ModelAndView getAttrs(ModelAndView modelAndView){
         long countwin,countlose,lvl;

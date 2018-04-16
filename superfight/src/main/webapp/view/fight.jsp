@@ -66,11 +66,11 @@
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div id="yourcolor" class="fullhp col-md-4 text-center">
-                <p id="yourhp">Жизнь:150/150</p>
-                <img src="../images/hulk.jpg" class="heroes img-thumbnail">
+            <div id="herocolor" class="fullhp col-md-4 text-center">
+                <p id="herohp">Жизнь:150/150</p>
+                <img id="heroimage" src="../images/hulk.jpg" class="heroes img-thumbnail">
                 <br>
-                <p class="name">Халк</p>
+                <p id="heroname" class="name">Халк</p>
             </div>
             <div class="col-md-2 text-center">
                 <br>
@@ -80,9 +80,9 @@
             </div>
             <div id="enemycolor" class="fullhp col-md-4 text-center">
                 <p id="enemyhp">Жизнь:200/200</p>
-                <img src="../images/spiderman.jpg" class="heroes img-thumbnail">
+                <img id="enemyimage" src="../images/spiderman.jpg" class="heroes img-thumbnail">
                 <br>
-                <p class="name">Человек-паук</p>
+                <p id="enemyname" class="name">Человек-паук</p>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -107,14 +107,27 @@
         <div class="huge-otstup"></div>
     </div>
     <script>
-        yourhp=150;
-        enemyhp=200;
-        enemyfullhp=200;
-        yourfullhp=150;
+
+        yourhp=${hp};
+        enemyhp=${hpEnemy};
+        enemyfullhp=${hpEnemy};
+        yourfullhp=${hp};
+        heroname = '${name}';
+        enemyname = '${nameEnemy}';
+        pathhero = '${pathToHero}';
+        pathenemy = '${pathToEnemy}';
         log = "-Начало боя!<br>---------------------";
         countyou=0;
         countenemy=0;
         $('#log').html(log);
+        window.onload = function () {
+            $('#heroname').text(heroname);
+            $('#enemyname').text(enemyname);
+            $('#heroimage').attr("src",pathhero);
+            $('#enemyimage').attr("src",pathenemy);
+            $('#enemyhp').text("Жизнь:" + enemyhp + "/"+enemyfullhp);
+            $('#herohp').text("Жизнь:" + yourhp + "/"+yourfullhp);
+        }
         function won() {
             $('#main-container').addClass('hidden');
             $('#result-container').removeClass('hidden');
@@ -137,12 +150,12 @@
             }
             $('#log').html(log);
             $("#log").scrollTop($("#log")[0].scrollHeight);
-            $('#yourhp').text("Жизнь:" + yourhp + "/150");
+            $('#herohp').text("Жизнь:" + yourhp + "/" +yourfullhp);
             if (yourhp <= (yourfullhp / 1.5)&&yourhp > (yourfullhp / 3)) {
-                $('#yourcolor').removeClass('fullhp').addClass('mediumhp');
+                $('#herocolor').removeClass('fullhp').addClass('mediumhp');
             }
             if (yourhp <= yourfullhp / 3) {
-                $('#yourcolor').removeClass('mediumhp').addClass('lowhp');
+                $('#herocolor').removeClass('mediumhp').addClass('lowhp');
             }
             $('#hit').removeClass('disabled');
         }
@@ -158,7 +171,7 @@
                 }
                 $('#log').html(log);
                 $("#log").scrollTop($("#log").scrollHeight);
-                $('#enemyhp').text("Жизнь:" + enemyhp + "/200");
+                $('#enemyhp').text("Жизнь:" + enemyhp + "/"+enemyfullhp);
                 if (enemyhp <= (enemyfullhp / 1.5)&&enemyhp > (enemyfullhp / 3)) {
                     $('#enemycolor').removeClass('fullhp').addClass('mediumhp');
                 }

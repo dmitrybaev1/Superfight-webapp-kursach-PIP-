@@ -53,7 +53,7 @@
                             <button type="button" id="fight" class="btn btn-success">В бой!</button>
                         </div>
                         <div class="btn-group">
-                            <button type="button" id="exit" class="btn btn-danger">Выйти</button>
+                            <button type="submit" id="exit" class="btn btn-danger">Выйти</button>
                         </div>
                     </div>
                     <br>
@@ -183,6 +183,16 @@
             </div>
             <br>
         </div>
+        <form method="post" id="quit" action="/quit" class="hidden"></form>
+        <form method="post" id="in-fight" action="/choose" class="hidden"></form>
+        <script>
+            $('#exit').click(function () {
+               $('#quit').submit();
+            });
+            $('#fight').click(function () {
+                $('#in-fight').submit();
+            });
+        </script>
         <script>
             $('#about').click(function () {
                 $('#aboutplace').removeClass('hidden');
@@ -271,7 +281,7 @@
                 var battles = Number(battleswin)+Number(battleslose);
                 var lvl = "${hulklvl}";
                 $('#hulkbattles').text("Боёв всего(выиграно/проиграно):"+battles+"("+battleswin+"/"+battleslose+")");
-                $('#hulklvl').text("Уровень хероя:"+lvl);
+                $('#hulklvl').text("Уровень героя:"+lvl);
             }
 
 

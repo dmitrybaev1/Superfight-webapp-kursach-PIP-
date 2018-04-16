@@ -1,7 +1,8 @@
 pip\coursework\superfight\Progress.class
 pip\coursework\superfight\ProgressId.class
 pip\coursework\superfight\StartController.class
-pip\coursework\superfight\LoginController.class
+pip\coursework\superfight\AuthController.class
+pip\coursework\superfight\FightController.class
 pip\coursework\superfight\User.class
 pip\coursework\superfight\HeroRepository.class
 pip\coursework\superfight\Battle.class

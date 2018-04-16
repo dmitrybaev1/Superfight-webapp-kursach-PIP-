@@ -47,7 +47,7 @@
             <div class="col-md-4"><h1 class="text-center" id="title">Выберите героев</h1></div>
             <div class="col-md-4"></div>
         </div>
-        <form id="form" name="chooseform">
+        <form id="form" method="post" action="/fight" name="chooseform">
             <div class="herotitle row">
                 <h2 class="choosetext text-center">Ваш герой</h2>
             </div>
