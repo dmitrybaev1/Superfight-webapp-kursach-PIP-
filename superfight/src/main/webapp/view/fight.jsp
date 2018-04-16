@@ -119,13 +119,13 @@
             $('#main-container').addClass('hidden');
             $('#result-container').removeClass('hidden');
             $('#result').text("ПОБЕДА!");
-            $('#xp').text("+300 очков опыта начислено!");
+            $('#xp').text("Еще одной победой больше!");
         }
         function lost() {
             $('#main-container').addClass('hidden');
             $('#result-container').removeClass('hidden');
             $('#result').text("ПОРАЖЕНИЕ!");
-            $('#xp').text("+300 очков опыта начислено!");
+            $('#xp').text("Повезет в следующий раз!");
         }
         function enemyAtack() {
             countenemy++;

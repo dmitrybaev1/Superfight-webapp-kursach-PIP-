@@ -1,5 +1,12 @@
+pip\coursework\superfight\Progress.class
+pip\coursework\superfight\ProgressId.class
 pip\coursework\superfight\StartController.class
-pip\coursework\superfight\UserRepository.class
 pip\coursework\superfight\LoginController.class
-pip\coursework\superfight\SuperfightApplication.class
 pip\coursework\superfight\User.class
+pip\coursework\superfight\HeroRepository.class
+pip\coursework\superfight\Battle.class
+pip\coursework\superfight\SuperfightApplication.class
+pip\coursework\superfight\ProgressRepository.class
+pip\coursework\superfight\Hero.class
+pip\coursework\superfight\UserRepository.class
+pip\coursework\superfight\BattleRepository.class

@@ -128,11 +128,11 @@
                 <div id="hero1cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                        <p id="supermanbattles" class="herostats">Боёв всего(выиграно/проиграно):</p>
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Уровень героя:</p>
+                        <p id="supermanlvl" class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
@@ -143,11 +143,11 @@
                 <div id="hero2cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                        <p id="batmanbattles" class="herostats">Боёв всего(выиграно/проиграно):</p>
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Уровень героя:</p>
+                        <p id="batmanlvl" class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
@@ -158,11 +158,11 @@
                 <div id="hero3cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                        <p id="spidermanbattles" class="herostats">Боёв всего(выиграно/проиграно):</p>
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Уровень героя:</p>
+                        <p id="spidermanlvl" class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
@@ -173,11 +173,11 @@
                 <div id="hero4cont" class="container hidden">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Боёв всего(выиграно/проиграно):</p>
+                        <p id="hulkbattles" class="herostats">Боёв всего(выиграно/проиграно):</p>
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <p class="herostats">Уровень героя:</p>
+                        <p id="hulklvl" class="herostats">Уровень героя:</p>
                     </div>
                 </div>
             </div>
@@ -234,6 +234,47 @@
                     $('#glyph4').removeClass('glyphicon glyphicon glyphicon-chevron-up').addClass('glyphicon glyphicon glyphicon-chevron-down');
                 }
             });
+        </script>
+        <script>
+            window.onload = function (e) {
+                //SUPERMAN
+
+                var battleswin = "${supermanwins}";
+                var battleslose = "${supermanloses}";
+                var battles = Number(battleswin)+Number(battleslose);
+                var lvl = "${supermanlvl}";
+                $('#supermanbattles').text("Боёв всего(выиграно/проиграно):"+battles+"("+battleswin+"/"+battleslose+")");
+                $('#supermanlvl').text("Уровень героя:"+lvl);
+
+                //BATMAN
+
+                var battleswin = "${batmanwins}";
+                var battleslose = "${batmanloses}";
+                var battles = Number(battleswin)+Number(battleslose);
+                var lvl = "${batmanlvl}";
+                $('#batmanbattles').text("Боёв всего(выиграно/проиграно):"+battles+"("+battleswin+"/"+battleslose+")");
+                $('#batmanlvl').text("Уровень героя:"+lvl);
+
+                //SPIDERMAN
+
+                var battleswin = "${spidermanwins}";
+                var battleslose = "${spidermanloses}";
+                var battles = Number(battleswin)+Number(battleslose);
+                var lvl = "${spidermanlvl}";
+                $('#spidermanbattles').text("Боёв всего(выиграно/проиграно):"+battles+"("+battleswin+"/"+battleslose+")");
+                $('#spidermanlvl').text("Уровень героя:"+lvl);
+
+                //HULK
+
+                var battleswin = "${hulkwins}";
+                var battleslose = "${hulkloses}";
+                var battles = Number(battleswin)+Number(battleslose);
+                var lvl = "${hulklvl}";
+                $('#hulkbattles').text("Боёв всего(выиграно/проиграно):"+battles+"("+battleswin+"/"+battleslose+")");
+                $('#hulklvl').text("Уровень хероя:"+lvl);
+            }
+
+
         </script>
     </body>
 </html>

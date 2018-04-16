@@ -8,8 +8,8 @@ import java.util.List;
 import static javafx.scene.input.KeyCode.T;
 
 public interface UserRepository extends CrudRepository<User,Long> {
-    List<User> findByLogin(String login);
-    List<User> findByMail(String mail);
-    List<User> findByLoginAndPassword(String login,String password);
+    User findByLogin(String login);
+    User findByMail(String mail);
+    User findByLoginAndPassword(String login,String password);
 
 }
