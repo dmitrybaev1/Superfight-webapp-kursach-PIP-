@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "battle",schema = "public")
 public class Battle {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "battle_id_battle_seq")
-    @SequenceGenerator(name = "battle_id_battle_seq",sequenceName = "battle_id_battle_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "battle")
+    @SequenceGenerator(name = "battle",sequenceName = "battle_id_seq")
     private long id;
     @ManyToOne
     @JoinColumn(name = "id_hero",referencedColumnName = "id")
@@ -15,13 +15,19 @@ public class Battle {
     @ManyToOne
     @JoinColumn(name = "id_enemy",referencedColumnName = "id")
     private Hero enemyId;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_user",referencedColumnName = "id")
     private User userId;
 
     private String result;
     public Battle(){
 
+    }
+    public Battle(Hero heroId,Hero enemyId,User userId,String result){
+        this.heroId = heroId;
+        this.enemyId = enemyId;
+        this.userId = userId;
+        this.result = result;
     }
     public String getResult() {
         return result;

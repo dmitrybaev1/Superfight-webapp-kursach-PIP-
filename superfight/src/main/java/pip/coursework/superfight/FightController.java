@@ -8,18 +8,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.WebParam;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class FightController {
     final int coeff=5;
     @Autowired
     HeroRepository heroRepository;
+    @Autowired
+    BattleRepository battleRepository;
+    @Autowired
+    HttpSession session;
+    @Autowired
+    AuthController auth;
     @RequestMapping(value = "/choose",method = RequestMethod.POST)
     public String choose(){
         return "chooseheroes";
     }
     @RequestMapping(value = "/fight",method = RequestMethod.POST)
-    public ModelAndView fight(@RequestParam("userhero") String userhero,@RequestParam("enemyhero") String enemyhero){
+    public ModelAndView fight(@RequestParam("userhero") String userhero, @RequestParam("enemyhero") String enemyhero){
         ModelAndView modelAndView = new ModelAndView();
         long hp;
         switch (enemyhero){
@@ -29,6 +36,7 @@ public class FightController {
                 Hero superman = heroRepository.findByName("Superman");
                 hp = (superman.getStrength()+superman.getAgility())*coeff;
                 modelAndView.addObject("hpEnemy",hp);
+                session.setAttribute("enemy",superman);
                 break;
             case "hero2":
                 modelAndView.addObject("pathToEnemy","../images/batman.jpg");
@@ -36,6 +44,7 @@ public class FightController {
                 Hero batman = heroRepository.findByName("Batman");
                 hp = (batman.getStrength()+batman.getAgility())*coeff;
                 modelAndView.addObject("hpEnemy",hp);
+                session.setAttribute("enemy",batman);
                 break;
             case "hero3":
                 modelAndView.addObject("pathToEnemy","../images/spiderman.jpg");
@@ -43,6 +52,7 @@ public class FightController {
                 Hero spiderman = heroRepository.findByName("Spiderman");
                 hp = (spiderman.getStrength()+spiderman.getAgility())*coeff;
                 modelAndView.addObject("hpEnemy",hp);
+                session.setAttribute("enemy",spiderman);
                 break;
             case "hero4":
                 modelAndView.addObject("pathToEnemy","../images/hulk.jpg");
@@ -50,6 +60,7 @@ public class FightController {
                 Hero hulk = heroRepository.findByName("Hulk");
                 hp = (hulk.getStrength()+hulk.getAgility())*coeff;
                 modelAndView.addObject("hpEnemy",hp);
+                session.setAttribute("enemy",hulk);
                 break;
             default:
                 modelAndView.setViewName("error_login");
@@ -62,6 +73,7 @@ public class FightController {
                 Hero superman = heroRepository.findByName("Superman");
                 hp = (superman.getStrength()+superman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                session.setAttribute("hero",superman);
                 break;
             case "hero2":
                 modelAndView.addObject("pathToHero","../images/batman.jpg");
@@ -69,6 +81,7 @@ public class FightController {
                 Hero batman = heroRepository.findByName("Batman");
                 hp = (batman.getStrength()+batman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                session.setAttribute("hero",batman);
                 break;
             case "hero3":
                 modelAndView.addObject("pathToHero","../images/spiderman.jpg");
@@ -76,6 +89,7 @@ public class FightController {
                 Hero spiderman = heroRepository.findByName("Spiderman");
                 hp = (spiderman.getStrength()+spiderman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                session.setAttribute("hero",spiderman);
                 break;
             case "hero4":
                 modelAndView.addObject("pathToHero","../images/hulk.jpg");
@@ -83,12 +97,22 @@ public class FightController {
                 Hero hulk = heroRepository.findByName("Hulk");
                 hp = (hulk.getStrength()+hulk.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                session.setAttribute("hero",hulk);
                 break;
-            default:
-                modelAndView.setViewName("error_login");
-                return modelAndView;
         }
         modelAndView.setViewName("fight");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/result", method = RequestMethod.POST)
+    public ModelAndView result(@RequestParam("result") String result){
+        ModelAndView modelAndView = new ModelAndView();
+        Hero hero = (Hero)session.getAttribute("hero");
+        Hero enemy = (Hero)session.getAttribute("enemy");
+        User user = (User)session.getAttribute("user");
+        Battle battle = new Battle(hero,enemy,user,result);
+        battleRepository.save(battle);
+        modelAndView = auth.getAttrs(modelAndView);
+        modelAndView.setViewName("main");
         return modelAndView;
     }
 }

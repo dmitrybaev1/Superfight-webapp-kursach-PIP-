@@ -54,7 +54,7 @@
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <spring:form method="post" action="/reg" modelAttribute="user" class="form-horizontal">
+                    <form method="post" action="/reg" class="form-horizontal">
                     <!-- Заголовок модального окна -->
                     <div class="modal-header">
                         <button type="button" id="krestik" class="close" data-dismiss="modal">×</button>
@@ -103,7 +103,7 @@
                         <button type="button" id="cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
                         <button id="save" type="submit" class="btn btn-primary">Регистрация</button>
                     </div>
-                    </spring:form>
+                    </form>
                 </div>
             </div>
         </div>

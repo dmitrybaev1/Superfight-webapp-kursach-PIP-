@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="670c15d8-5bb0-4b06-9745-c85c6d511a55" name="Default" comment="" />
+    <list default="true" id="670c15d8-5bb0-4b06-9745-c85c6d511a55" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/AuthController.class" afterPath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/AuthController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/Battle.class" afterPath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/Battle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/FightController.class" afterPath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/FightController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/ProgressId.class" afterPath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/ProgressId.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/StartController.class" afterPath="$PROJECT_DIR$/target/classes/pip/coursework/superfight/StartController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java" afterPath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java" afterPath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java" afterPath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java" afterPath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java" afterPath="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/view/fight.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/view/fight.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/view/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/view/main.jsp" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,40 +34,11 @@
       <file leaf-file-name="Battle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+            <state relative-caret-position="425">
+              <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#843#844#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#921#922#0" expanded="true" />
-                <element signature="e#957#958#0" expanded="true" />
-                <element signature="e#999#1000#0" expanded="true" />
-                <element signature="e#1035#1036#0" expanded="true" />
-                <element signature="e#1079#1080#0" expanded="true" />
-                <element signature="e#1117#1118#0" expanded="true" />
-                <element signature="e#1148#1149#0" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
-                <element signature="e#1269#1270#0" expanded="true" />
-                <element signature="e#1299#1300#0" expanded="true" />
-                <element signature="e#1326#1327#0" expanded="true" />
-                <element signature="e#1351#1352#0" expanded="true" />
-                <element signature="e#1413#1414#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1580#1581#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +47,8 @@
       <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1175">
-              <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+            <state relative-caret-position="1775">
+              <caret line="80" column="36" lean-forward="false" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,43 +59,53 @@
       <file leaf-file-name="FightController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+            <state relative-caret-position="2575">
+              <caret line="113" column="51" lean-forward="false" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#626#627#0" expanded="true" />
-                <element signature="e#663#664#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProgressRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fight.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fight.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/fight.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+            <state relative-caret-position="3825">
+              <caret line="153" column="52" lean-forward="false" selection-start-line="153" selection-start-column="52" selection-end-line="153" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="950">
+              <caret line="38" column="116" lean-forward="false" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="116" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1425">
-              <caret line="186" column="58" lean-forward="false" selection-start-line="186" selection-start-column="58" selection-end-line="186" selection-end-column="58" />
+            <state relative-caret-position="724">
+              <caret line="188" column="55" lean-forward="false" selection-start-line="188" selection-start-column="55" selection-end-line="188" selection-end-column="55" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding>
+                <element signature="e#423#424#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +113,7 @@
       <file leaf-file-name="chooseheroes.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/chooseheroes.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="1225">
               <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
@@ -129,7 +125,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
               <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-              <folding />
+              <folding>
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,18 +136,10 @@
       <file leaf-file-name="ProgressId.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#532#533#0" expanded="true" />
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,6 +155,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -188,22 +182,22 @@
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Hero.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressRepositroy.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/HeroRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/BattleId.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/BattleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Progress.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/chooseheroes.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java" />
         <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/fight.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java" />
       </list>
     </option>
   </component>
@@ -253,6 +247,7 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -336,9 +331,9 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,6 +345,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -473,11 +469,13 @@
       <workItem from="1523809826265" duration="16262000" />
       <workItem from="1523866169334" duration="26381000" />
       <workItem from="1523898300915" duration="12622000" />
+      <workItem from="1523955019949" duration="6915000" />
+      <workItem from="1523966130971" duration="41000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103624000" />
+    <option name="totallyTimeSpent" value="110580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -489,16 +487,16 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32918918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28333333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19880952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2708108" sideWeight="0.8488372" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27567568" sideWeight="0.83154124" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2708108" sideWeight="0.15116279" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27567568" sideWeight="0.16845877" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -546,10 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#259#260#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -581,10 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#259#260#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -616,10 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#259#260#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,10 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#259#260#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,10 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="10" column="65" lean-forward="false" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
-          <folding>
-            <element signature="e#259#260#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -712,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,21 +714,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressRepositroy.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/HeroRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -792,61 +752,7 @@
         <state relative-caret-position="175">
           <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Progress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding>
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1079#1080#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1269#1270#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -855,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,25 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="988" column="0" lean-forward="false" selection-start-line="988" selection-start-column="0" selection-end-line="988" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/chooseheroes.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,30 +779,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Battle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+        <state relative-caret-position="425">
+          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/main.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/ProgressId.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425">
-          <caret line="186" column="58" lean-forward="false" selection-start-line="186" selection-start-column="58" selection-end-line="186" selection-end-column="58" />
+        <state relative-caret-position="225">
+          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/Progress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding>
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/chooseheroes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/StartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#423#424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="38" column="116" lean-forward="false" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/FightController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2575">
+          <caret line="113" column="51" lean-forward="false" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pip/coursework/superfight/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1775">
+          <caret line="80" column="36" lean-forward="false" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/fight.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+        <state relative-caret-position="3825">
+          <caret line="153" column="52" lean-forward="false" selection-start-line="153" selection-start-column="52" selection-end-line="153" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="188" column="55" lean-forward="false" selection-start-line="188" selection-start-column="55" selection-end-line="188" selection-end-column="55" />
           <folding />
         </state>
       </provider>

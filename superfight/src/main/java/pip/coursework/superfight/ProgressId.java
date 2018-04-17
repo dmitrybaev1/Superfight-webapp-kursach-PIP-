@@ -8,7 +8,7 @@ public class ProgressId implements Serializable {
     @ManyToOne
     @JoinColumn(name="id_hero",referencedColumnName = "id")
     private Hero hero;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="id_user",referencedColumnName = "id")
     private User user;
 

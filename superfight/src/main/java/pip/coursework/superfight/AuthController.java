@@ -24,12 +24,14 @@ public class AuthController {
     HeroRepository heroRepository;
     @Autowired
     BattleRepository battleRepository;
+    @Autowired
+    HttpSession session;
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public ModelAndView login(@RequestParam("login") String login,@RequestParam("password") String password,HttpSession httpSession){
+    public ModelAndView login(@RequestParam("login") String login,@RequestParam("password") String password){
         ModelAndView modelAndView = new ModelAndView();
         user = userRepository.findByLoginAndPassword(login,password);
         if(user!=null){
-            httpSession.setAttribute("user",user);
+            session.setAttribute("user",user);
             modelAndView = getAttrs(modelAndView);
             modelAndView.setViewName("main");
             return modelAndView;
@@ -44,7 +46,7 @@ public class AuthController {
         return "index";
     }
     @RequestMapping(value = "/reg",method = RequestMethod.POST)
-    public ModelAndView reg(HttpSession session,@RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("mail") String mail){
+    public ModelAndView reg(@RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("mail") String mail){
         ModelAndView modelAndView = new ModelAndView();
         user = new User(login,mail,password);
         session.setAttribute("user",user);
@@ -70,11 +72,16 @@ public class AuthController {
         return modelAndView;
     }
     @RequestMapping(value = "/quit",method = RequestMethod.POST)
-    public String quit(HttpSession session){
+    public String quit(){
         session.invalidate();
         return "index";
     }
-    ModelAndView getAttrs(ModelAndView modelAndView){
+    @RequestMapping(value = "/remove",method = RequestMethod.POST)
+    public String remove(){
+        userRepository.delete(user);
+        return "index";
+    }
+    public ModelAndView getAttrs(ModelAndView modelAndView){
         long countwin,countlose,lvl;
         ProgressId progressId;
         superman = heroRepository.findByName("Superman");

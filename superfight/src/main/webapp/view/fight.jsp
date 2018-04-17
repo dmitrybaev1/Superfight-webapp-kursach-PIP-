@@ -102,12 +102,15 @@
             <br>
             <h3 id="xp"></h3>
             <br>
-            <button class="btn btn-danger">Выйти</button>
+            <button id="quit" class="btn btn-danger">Выйти</button>
         </div>
         <div class="huge-otstup"></div>
     </div>
+    <form method="post" action="/result" id="form" class="hidden">
+        <input id="resultbattle" type="text" name="result" value="">
+    </form>
     <script>
-
+        var win=false;
         yourhp=${hp};
         enemyhp=${hpEnemy};
         enemyfullhp=${hpEnemy};
@@ -133,13 +136,25 @@
             $('#result-container').removeClass('hidden');
             $('#result').text("ПОБЕДА!");
             $('#xp').text("Еще одной победой больше!");
+            win=true;
         }
         function lost() {
             $('#main-container').addClass('hidden');
             $('#result-container').removeClass('hidden');
             $('#result').text("ПОРАЖЕНИЕ!");
             $('#xp').text("Повезет в следующий раз!");
+            win=false;
         }
+        $('#quit').click(function () {
+            if(win) {
+                $('#resultbattle').attr("value",'w');
+                $('#form').submit();
+            }
+            else{
+                $('#resultbattle').attr("value",'l');
+                $('#form').submit();
+            }
+        });
         function enemyAtack() {
             countenemy++;
             log += "<br>" + "-Ход " + countenemy + "(Противник): Противник наносит 30 урона!";
