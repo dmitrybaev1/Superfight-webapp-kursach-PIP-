@@ -28,43 +28,57 @@ public class FightController {
     @RequestMapping(value = "/fight",method = RequestMethod.POST)
     public ModelAndView fight(@RequestParam("userhero") String userhero, @RequestParam("enemyhero") String enemyhero){
         ModelAndView modelAndView = new ModelAndView();
-        long hp;
-        switch (enemyhero){
+        long hp,damage,agility;
+        switch (enemyhero) {
             case "hero1":
-                modelAndView.addObject("pathToEnemy","../images/superman.jpg");
-                modelAndView.addObject("nameEnemy","Супермен");
+                modelAndView.addObject("pathToEnemy", "../images/superman.jpg");
+                modelAndView.addObject("nameEnemy", "Супермен");
                 Hero superman = heroRepository.findByName("Superman");
-                hp = (superman.getStrength()+superman.getAgility())*coeff;
-                modelAndView.addObject("hpEnemy",hp);
-                session.setAttribute("enemy",superman);
+                hp = (superman.getStrength() + superman.getAgility()) * coeff;
+                modelAndView.addObject("hpEnemy", hp);
+                damage = superman.getStrength();
+                modelAndView.addObject("damageEnemy",damage);
+                agility = superman.getAgility();
+                modelAndView.addObject("agilityEnemy",agility);
+                session.setAttribute("enemy", superman);
                 break;
             case "hero2":
-                modelAndView.addObject("pathToEnemy","../images/batman.jpg");
-                modelAndView.addObject("nameEnemy","Бэтмен");
+                modelAndView.addObject("pathToEnemy", "../images/batman.jpg");
+                modelAndView.addObject("nameEnemy", "Бэтмен");
                 Hero batman = heroRepository.findByName("Batman");
-                hp = (batman.getStrength()+batman.getAgility())*coeff;
-                modelAndView.addObject("hpEnemy",hp);
-                session.setAttribute("enemy",batman);
+                hp = (batman.getStrength() + batman.getAgility()) * coeff;
+                modelAndView.addObject("hpEnemy", hp);
+                damage = batman.getStrength();
+                modelAndView.addObject("damageEnemy",damage);
+                agility = batman.getAgility();
+                modelAndView.addObject("agilityEnemy",agility);
+                session.setAttribute("enemy", batman);
                 break;
             case "hero3":
-                modelAndView.addObject("pathToEnemy","../images/spiderman.jpg");
-                modelAndView.addObject("nameEnemy","Человек-паук");
+                modelAndView.addObject("pathToEnemy", "../images/spiderman.jpg");
+                modelAndView.addObject("nameEnemy", "Человек-паук");
                 Hero spiderman = heroRepository.findByName("Spiderman");
-                hp = (spiderman.getStrength()+spiderman.getAgility())*coeff;
-                modelAndView.addObject("hpEnemy",hp);
-                session.setAttribute("enemy",spiderman);
+                hp = (spiderman.getStrength() + spiderman.getAgility()) * coeff;
+                modelAndView.addObject("hpEnemy", hp);
+                damage = spiderman.getStrength();
+                modelAndView.addObject("damageEnemy",damage);
+                agility = spiderman.getAgility();
+                modelAndView.addObject("agilityEnemy",agility);
+                session.setAttribute("enemy", spiderman);
                 break;
             case "hero4":
-                modelAndView.addObject("pathToEnemy","../images/hulk.jpg");
-                modelAndView.addObject("nameEnemy","Халк");
+                modelAndView.addObject("pathToEnemy", "../images/hulk.jpg");
+                modelAndView.addObject("nameEnemy", "Халк");
                 Hero hulk = heroRepository.findByName("Hulk");
-                hp = (hulk.getStrength()+hulk.getAgility())*coeff;
-                modelAndView.addObject("hpEnemy",hp);
-                session.setAttribute("enemy",hulk);
+                hp = (hulk.getStrength() + hulk.getAgility()) * coeff;
+                modelAndView.addObject("hpEnemy", hp);
+                damage = hulk.getStrength();
+                modelAndView.addObject("damageEnemy",damage);
+                agility = hulk.getAgility();
+                modelAndView.addObject("agilityEnemy",agility);
+                session.setAttribute("enemy", hulk);
                 break;
-            default:
-                modelAndView.setViewName("error_login");
-                return modelAndView;
+
         }
         switch (userhero){
             case "hero1":
@@ -73,6 +87,10 @@ public class FightController {
                 Hero superman = heroRepository.findByName("Superman");
                 hp = (superman.getStrength()+superman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                damage = superman.getStrength();
+                modelAndView.addObject("damage",damage);
+                agility = superman.getAgility();
+                modelAndView.addObject("agility",agility);
                 session.setAttribute("hero",superman);
                 break;
             case "hero2":
@@ -81,6 +99,10 @@ public class FightController {
                 Hero batman = heroRepository.findByName("Batman");
                 hp = (batman.getStrength()+batman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                damage = batman.getStrength();
+                modelAndView.addObject("damage",damage);
+                agility = batman.getAgility();
+                modelAndView.addObject("agility",agility);
                 session.setAttribute("hero",batman);
                 break;
             case "hero3":
@@ -89,6 +111,10 @@ public class FightController {
                 Hero spiderman = heroRepository.findByName("Spiderman");
                 hp = (spiderman.getStrength()+spiderman.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                damage = spiderman.getStrength();
+                modelAndView.addObject("damage",damage);
+                agility = spiderman.getAgility();
+                modelAndView.addObject("agility",agility);
                 session.setAttribute("hero",spiderman);
                 break;
             case "hero4":
@@ -97,6 +123,10 @@ public class FightController {
                 Hero hulk = heroRepository.findByName("Hulk");
                 hp = (hulk.getStrength()+hulk.getAgility())*coeff;
                 modelAndView.addObject("hp",hp);
+                damage = hulk.getStrength();
+                modelAndView.addObject("damage",damage);
+                agility = hulk.getAgility();
+                modelAndView.addObject("agility",agility);
                 session.setAttribute("hero",hulk);
                 break;
         }
@@ -112,6 +142,7 @@ public class FightController {
         Battle battle = new Battle(hero,enemy,user,result);
         battleRepository.save(battle);
         modelAndView = auth.getAttrs(modelAndView);
+        modelAndView.addObject("user",user.getLogin());
         modelAndView.setViewName("main");
         return modelAndView;
     }

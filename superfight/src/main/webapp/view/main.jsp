@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4 id="nicktext" class="text-center">
-                        Имя
+                        ${user}
                     </h4>
                 </div>
             </div>
@@ -104,7 +104,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4 id="fightvalue" class="text-center">
-                        0
+                        ${count}(${countwin}/${countlose})
                     </h4>
                 </div>
             </div>

@@ -32,6 +32,7 @@ public class AuthController {
         user = userRepository.findByLoginAndPassword(login,password);
         if(user!=null){
             session.setAttribute("user",user);
+            modelAndView.addObject("user",user.getLogin());
             modelAndView = getAttrs(modelAndView);
             modelAndView.setViewName("main");
             return modelAndView;
@@ -68,6 +69,7 @@ public class AuthController {
         Progress progress4 = new Progress(pid4,1);
         progressRepository.save(progress4);
         modelAndView = getAttrs(modelAndView);
+        modelAndView.addObject("user",user.getLogin());
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -82,7 +84,7 @@ public class AuthController {
         return "index";
     }
     public ModelAndView getAttrs(ModelAndView modelAndView){
-        long countwin,countlose,lvl;
+        long countwin,countlose,lvl,countloseall=0,countwinall=0;
         ProgressId progressId;
         superman = heroRepository.findByName("Superman");
         batman = heroRepository.findByName("Batman");
@@ -96,6 +98,8 @@ public class AuthController {
         progressId = new ProgressId(superman,user);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("supermanlvl",lvl);
+        countwinall+=countwin;
+        countloseall+=countlose;
         //BATMAN
         countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,batman,"w");
         modelAndView.addObject("batmanwins",countwin);
@@ -104,6 +108,8 @@ public class AuthController {
         progressId = new ProgressId(batman,user);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("batmanlvl",lvl);
+        countwinall+=countwin;
+        countloseall+=countlose;
         //SPIDERMAN
         countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,spiderman,"w");
         modelAndView.addObject("spidermanwins",countwin);
@@ -112,6 +118,8 @@ public class AuthController {
         progressId = new ProgressId(spiderman,user);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("spidermanlvl",lvl);
+        countwinall+=countwin;
+        countloseall+=countlose;
         //HULK
         countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,hulk,"w");
         modelAndView.addObject("hulkwins",countwin);
@@ -120,6 +128,12 @@ public class AuthController {
         progressId = new ProgressId(hulk,user);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("hulklvl",lvl);
+        countwinall+=countwin;
+        countloseall+=countlose;
+        long countall = countwinall+countloseall;
+        modelAndView.addObject("countwin",countwinall);
+        modelAndView.addObject("countlose",countloseall);
+        modelAndView.addObject("count",countall);
         return modelAndView;
     }
 }

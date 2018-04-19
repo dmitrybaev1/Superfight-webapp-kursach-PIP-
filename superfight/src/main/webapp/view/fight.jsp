@@ -17,7 +17,7 @@
             background-color: #f5f5f5;
         }
         .otstup{
-            height: 300px;
+            height: 200px;
         }
         .heroes{
             width:140px;
@@ -39,7 +39,7 @@
             border: 5px double black;
             font-family: "Impact";
         }
-        .name{
+        .name,.side{
             font-family: "Arial Black";
         }
         #log{
@@ -53,7 +53,7 @@
             font-family: "Impact";
         }
         .huge-otstup{
-            height: 400px;
+            height: 300px;
         }
     </style>
 </head>
@@ -63,6 +63,13 @@
             <div class="col-md-2"></div>
             <div class="col-md-8"><h1 id="title">FIGHT!</h1></div>
             <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="side col-md-4 text-center"><h3 class="side">Вы</h3></div>
+            <div class="col-md-2"></div>
+            <div class="side col-md-4 text-center"><h3 class="side">Противник</h3></div>
+            <div class="col-md-1"></div>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
@@ -110,15 +117,24 @@
         <input id="resultbattle" type="text" name="result" value="">
     </form>
     <script>
+        function randomInt(min,max) {
+            var rand = min - 0.5 +Math.random()*(max-min+1);
+            rand = Math.round(rand);
+            return rand;
+        }
         var win=false;
         yourhp=${hp};
         enemyhp=${hpEnemy};
         enemyfullhp=${hpEnemy};
         yourfullhp=${hp};
+        damage=${damage};
+        enemydamage=${damageEnemy};
         heroname = '${name}';
         enemyname = '${nameEnemy}';
         pathhero = '${pathToHero}';
         pathenemy = '${pathToEnemy}';
+        enemyagility = ${agilityEnemy};
+        agility = ${agility};
         log = "-Начало боя!<br>---------------------";
         countyou=0;
         countenemy=0;
@@ -157,11 +173,30 @@
         });
         function enemyAtack() {
             countenemy++;
-            log += "<br>" + "-Ход " + countenemy + "(Противник): Противник наносит 30 урона!";
-            yourhp -= 30;
+            miss = randomInt(0,100);
+            var isMissing=false;
+            if(miss>=0&&miss<=agility)
+                isMissing=true;
+            hit = randomInt(enemydamage-4,enemydamage+4);
+            crit = randomInt(1,10);
+            var isCrit=false;
+            if(crit==5) {
+                hit = Math.round(2.5 * hit);
+                isCrit=true;
+            }
+            if(!isMissing) {
+                yourhp -= hit;
+                if (!isCrit)
+                    log += "<br>" + "-Ход " + countenemy + "(Противник): Противник наносит " + hit + " урона!";
+                else
+                    log += "<br>" + "-Ход " + countenemy + "(Противник): Противник критует на " + hit + " урона!";
+            }
+            else
+                log += "<br>" + "-Ход " + countyou + "(Противник): Промах!";
             if(yourhp<=0) {
                 yourhp = 0;
-                lost();
+                $('#hit').addClass('hidden');
+                setTimeout(lost,1000);
             }
             $('#log').html(log);
             $("#log").scrollTop($("#log")[0].scrollHeight);
@@ -178,11 +213,31 @@
             if(!$('#hit').hasClass('disabled')) {
                 $('#hit').addClass('disabled');
                 countyou++;
-                log += "<br/>" + "-Ход " + countyou + "(Вы): Вы наносите 20 урона!";
-                enemyhp -= 20;
+                miss = randomInt(0,100);
+                var isMissing=false;
+                if(miss>=0&&miss<=enemyagility)
+                    isMissing=true;
+                hit = randomInt(damage-4,damage+4);
+                crit = randomInt(1,10);
+                var isCrit=false;
+                if(crit==5) {
+                    hit = Math.round(2.5 * hit);
+                    isCrit=true;
+                }
+                if(!isMissing) {
+                    enemyhp -= hit;
+                    if (!isCrit)
+                        log += "<br>" + "-Ход " + countyou + "(Вы): Вы наносите " + hit + " урона!";
+                    else
+                        log += "<br>" + "-Ход " + countyou + "(Вы): Вы критуете на " + hit + " урона!";
+                }
+                else{
+                    log += "<br>" + "-Ход " + countyou + "(Вы): Промах!";
+                }
                 if(enemyhp<=0) {
                     enemyhp = 0;
-                    won();
+                    $('#hit').addClass('hidden');
+                    setTimeout(won,1000);
                 }
                 $('#log').html(log);
                 $("#log").scrollTop($("#log").scrollHeight);
