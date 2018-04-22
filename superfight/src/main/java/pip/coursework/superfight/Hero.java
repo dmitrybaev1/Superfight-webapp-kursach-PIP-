@@ -30,4 +30,5 @@ public class Hero {
     public int getAgility() {
         return agility;
     }
+
 }

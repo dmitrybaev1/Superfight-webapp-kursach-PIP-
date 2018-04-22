@@ -18,6 +18,8 @@ public class FightController {
     @Autowired
     BattleRepository battleRepository;
     @Autowired
+    ProgressRepository progressRepository;
+    @Autowired
     HttpSession session;
     @Autowired
     AuthController auth;
@@ -139,11 +141,46 @@ public class FightController {
         Hero hero = (Hero)session.getAttribute("hero");
         Hero enemy = (Hero)session.getAttribute("enemy");
         User user = (User)session.getAttribute("user");
+
         Battle battle = new Battle(hero,enemy,user,result);
         battleRepository.save(battle);
+        long count = battleRepository.countByUserIdAndHeroIdAndResult(user,hero,"w");
+        ProgressId pid = new ProgressId(hero,user);
+        Progress p = progressRepository.findById(pid);
+        checkHeroName(hero.getName(),modelAndView,p);
+        if(count==5){
+            p.setLevel(2);
+            checkHeroName(hero.getName(),modelAndView,p);
+            progressRepository.save(p);
+        }
+        else if(count==15){
+            p.setLevel(3);
+            checkHeroName(hero.getName(),modelAndView,p);
+            progressRepository.save(p);
+        }
+        else if(count==30){
+            p.setLevel(4);
+            checkHeroName(hero.getName(),modelAndView,p);
+            progressRepository.save(p);
+        }
+        else if(count==50){
+            p.setLevel(5);
+            checkHeroName(hero.getName(),modelAndView,p);
+            progressRepository.save(p);
+        }
         modelAndView = auth.getAttrs(modelAndView);
         modelAndView.addObject("user",user.getLogin());
         modelAndView.setViewName("main");
         return modelAndView;
+    }
+    void checkHeroName(String name, ModelAndView modelAndView,Progress p){
+        if(name=="Superman")
+            modelAndView.addObject("supermanlvl",p.getLevel());
+        else if(name=="Batman")
+            modelAndView.addObject("supermanlvl",p.getLevel());
+        else if(name=="Spiderman")
+            modelAndView.addObject("spidermanlvl",p.getLevel());
+        else if(name=="Hulk")
+            modelAndView.addObject("hulklvl",p.getLevel());
     }
 }
