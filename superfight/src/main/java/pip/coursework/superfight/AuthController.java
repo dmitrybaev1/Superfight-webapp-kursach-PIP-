@@ -1,17 +1,23 @@
 package pip.coursework.superfight;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import service.CustomUserDetails;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
+import java.util.logging.Logger;
 
 @Controller
 public class AuthController {
-    User user;
+    CustomUserDetails user;
     Hero superman;
     Hero batman;
     Hero spiderman;
@@ -26,30 +32,25 @@ public class AuthController {
     BattleRepository battleRepository;
     @Autowired
     HttpSession session;
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public ModelAndView login(@RequestParam("login") String login,@RequestParam("password") String password){
+    private static Logger log = Logger.getLogger(AuthController.class.getName());
+    @RequestMapping(value = "/main")
+    public ModelAndView afterLogin(Authentication authentication){
         ModelAndView modelAndView = new ModelAndView();
-        user = userRepository.findByLoginAndPassword(login,password);
-        if(user!=null){
-            session.setAttribute("user",user);
-            modelAndView.addObject("user",user.getLogin());
-            modelAndView = getAttrs(modelAndView);
-            modelAndView.setViewName("main");
-            return modelAndView;
-        }
-        else{
-            modelAndView.setViewName("error_login");
-            return modelAndView;
-        }
+        user = (CustomUserDetails) authentication.getPrincipal();
+        modelAndView.addObject("user",user.getUsername());
+        //modelAndView.addObject("eff","strrr");
+      //  modelAndView = getAttrs(modelAndView);
+        modelAndView.setViewName("main");
+        return modelAndView;
     }
     @RequestMapping(value = "/back_from_error",method = RequestMethod.GET)
     public String back(){
-        return "index";
+        return "login";
     }
     @RequestMapping(value = "/reg",method = RequestMethod.POST)
     public ModelAndView reg(@RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("mail") String mail){
         ModelAndView modelAndView = new ModelAndView();
-        user = new User(login,mail,password);
+        //user = new User(login,mail,password);
         session.setAttribute("user",user);
         userRepository.save(user);
         superman = heroRepository.findByName("Superman");
@@ -69,9 +70,38 @@ public class AuthController {
         Progress progress4 = new Progress(pid4,1);
         progressRepository.save(progress4);
         modelAndView = getAttrs(modelAndView);
-        modelAndView.addObject("user",user.getLogin());
+        modelAndView.addObject("user",user.getUsername());
         modelAndView.setViewName("main");
+        //отправить сообщение с поздравлением о регистрации
+        MailSender.send("Добро пожаловать," +user.getUsername()+ "!","Спасибо, что зарегистрировались в Superfight! Прокачивайте героев и сокрушайте врагов!",user.getMail());
         return modelAndView;
+    }
+    @RequestMapping(value = "/testcreate",method = RequestMethod.POST)
+    @ResponseBody
+    public String testcreate(@RequestParam("login")String login,@RequestParam("password")String password,@RequestParam("mail")String mail){
+        //user = new User(login,mail,password);
+        userRepository.save(user);
+        return "success";
+    }
+    @RequestMapping(value = "/testdelete",method = RequestMethod.POST)
+    @ResponseBody
+    public String testdelete(){
+        userRepository.delete(user);
+        return "success";
+    }
+    @RequestMapping(value = "/testupdate",method = RequestMethod.POST)
+    @ResponseBody
+    public String testupdate(){
+        User usr = userRepository.findByUsernameAndPassword(user.getUsername(),user.getPassword());
+        usr.setUsername("updatedLogin");
+        userRepository.save(usr);
+        return "new login is "+usr.getUsername();
+    }
+    @RequestMapping(value = "/testselect",method = RequestMethod.POST)
+    @ResponseBody
+    public String testselect(@RequestParam("login")String login){
+        User usr = userRepository.findByUsername(login);
+        return usr.getMail();
     }
     @RequestMapping(value = "/quit",method = RequestMethod.POST)
     public String quit(){

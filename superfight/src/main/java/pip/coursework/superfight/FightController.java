@@ -141,7 +141,6 @@ public class FightController {
         Hero hero = (Hero)session.getAttribute("hero");
         Hero enemy = (Hero)session.getAttribute("enemy");
         User user = (User)session.getAttribute("user");
-
         Battle battle = new Battle(hero,enemy,user,result);
         battleRepository.save(battle);
         long count = battleRepository.countByUserIdAndHeroIdAndResult(user,hero,"w");
@@ -169,15 +168,20 @@ public class FightController {
             progressRepository.save(p);
         }
         modelAndView = auth.getAttrs(modelAndView);
-        modelAndView.addObject("user",user.getLogin());
+        modelAndView.addObject("user",user.getUsername());
         modelAndView.setViewName("main");
+        //Отправить сообщение с итогом боя
+        if(battle.getResult().equals("w"))
+            MailSender.send("Информация о бое","Ваш герой:"+hero.getName()+"\nВаш противник:"+enemy.getName()+"\nРезультат боя: ПОБЕДА",user.getMail());
+        else if(battle.getResult().equals("l"))
+            MailSender.send("Информация о бое","Ваш герой:"+hero.getName()+"\nВаш противник:"+enemy.getName()+"\nРезультат боя: ПОРАЖЕНИЕ",user.getMail());
         return modelAndView;
     }
     void checkHeroName(String name, ModelAndView modelAndView,Progress p){
         if(name=="Superman")
             modelAndView.addObject("supermanlvl",p.getLevel());
         else if(name=="Batman")
-            modelAndView.addObject("supermanlvl",p.getLevel());
+            modelAndView.addObject("batmanlvl",p.getLevel());
         else if(name=="Spiderman")
             modelAndView.addObject("spidermanlvl",p.getLevel());
         else if(name=="Hulk")

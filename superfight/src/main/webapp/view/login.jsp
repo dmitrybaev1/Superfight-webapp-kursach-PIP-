@@ -29,14 +29,14 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="login">
-                    <form method="post" action="/login" class="form-inline">
+                    <form name="f" method="post" action="/loginForm" class="form-inline">
                         <br>
                         <p class="text-center">
-                            <input type="text" name="login" required class="form-control" id="InputLogin" placeholder="Логин"></input>
+                            <input type="text" name="username" required class="form-control" id="InputLogin" placeholder="Логин"></input>
                             <input type="password" name="password" required class="form-control" id="InputPassword" placeholder="Пароль"></input>
                             <button type="submit" id="signin" class="btn btn-primary">Вход</button>
                             <!-- Триггер кнопка модали-->
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                            <button type="button" name="submit" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                                 Зарегистрироваться
                             </button>
                         </p>

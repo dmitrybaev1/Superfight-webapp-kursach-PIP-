@@ -1,6 +1,7 @@
 package pip.coursework.superfight;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user",schema = "public")
@@ -9,10 +10,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq")
     @SequenceGenerator(name = "seq",sequenceName = "seq")
     private long id;
-    private String login;
+    private String username;
     private String mail;
     private String password;
-
+    private int active;
+    @OneToMany(cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+    @JoinTable(name="user_role",joinColumns = @JoinColumn(name="user_id"),inverseJoinColumns = @JoinColumn(name="role_id"))
+    private Set<Role> role;
     public long getId() {
         return id;
     }
@@ -21,12 +25,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String login) {
+        this.username = login;
     }
 
     public String getMail() {
@@ -45,12 +49,36 @@ public class User {
         this.password = password;
     }
 
+    public void setActive(int active){
+        this.active = active;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public Set<Role> getRole() {
+        return role;
+    }
+
+    public void setRole(Set<Role> role) {
+        this.role = role;
+    }
+
     public User(){
 
     }
     public User(String login,String mail,String password){
-        this.login = login;
+        this.username = login;
         this.mail = mail;
         this.password = password;
+    }
+    public User(User user){
+        this.active = user.getActive();
+        this.mail = user.getMail();
+        this.role = user.getRole();
+        this.username = user.getUsername();
+        this.id =  user.getId();
+        this.password = user.getPassword();
     }
 }

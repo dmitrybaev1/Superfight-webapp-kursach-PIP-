@@ -248,7 +248,8 @@
                 if (enemyhp <= enemyfullhp / 3) {
                     $('#enemycolor').removeClass('mediumhp').addClass('lowhp');
                 }
-                setTimeout(enemyAtack, 1000);
+                if(enemyhp>0)
+                    setTimeout(enemyAtack, 1000);
             }
         });
 
