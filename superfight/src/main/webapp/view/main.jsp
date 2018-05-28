@@ -205,7 +205,7 @@
                 </div>
             </div>
         </div>
-        <form method="post" id="quit" action="/quit" class="hidden"></form>
+        <form method="post" id="quit" action="/logout" class="hidden"></form>
         <form method="post" id="in-fight" action="/choose" class="hidden"></form>
         <script>
             $('#exit').click(function () {

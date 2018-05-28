@@ -68,10 +68,11 @@ public class User {
     public User(){
 
     }
-    public User(String login,String mail,String password){
+    public User(String login,String mail,String password,int active){
         this.username = login;
         this.mail = mail;
         this.password = password;
+        this.active = active;
     }
     public User(User user){
         this.active = user.getActive();

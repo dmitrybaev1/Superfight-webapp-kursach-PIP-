@@ -20,6 +20,8 @@ public class FightController {
     @Autowired
     ProgressRepository progressRepository;
     @Autowired
+    UserRepository userRepository;
+    @Autowired
     HttpSession session;
     @Autowired
     AuthController auth;
@@ -140,7 +142,8 @@ public class FightController {
         ModelAndView modelAndView = new ModelAndView();
         Hero hero = (Hero)session.getAttribute("hero");
         Hero enemy = (Hero)session.getAttribute("enemy");
-        User user = (User)session.getAttribute("user");
+        String username = (String)session.getAttribute("user");
+        User user = userRepository.findByUsername(username);
         Battle battle = new Battle(hero,enemy,user,result);
         battleRepository.save(battle);
         long count = battleRepository.countByUserIdAndHeroIdAndResult(user,hero,"w");

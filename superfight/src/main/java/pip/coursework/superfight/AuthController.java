@@ -39,7 +39,8 @@ public class AuthController {
         user = (CustomUserDetails) authentication.getPrincipal();
         modelAndView.addObject("user",user.getUsername());
         //modelAndView.addObject("eff","strrr");
-      //  modelAndView = getAttrs(modelAndView);
+        modelAndView = getAttrs(modelAndView);
+        session.setAttribute("user",user.getUsername());
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -50,7 +51,7 @@ public class AuthController {
     @RequestMapping(value = "/reg",method = RequestMethod.POST)
     public ModelAndView reg(@RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("mail") String mail){
         ModelAndView modelAndView = new ModelAndView();
-        //user = new User(login,mail,password);
+        User user = new User(login,mail,password,1);
         session.setAttribute("user",user);
         userRepository.save(user);
         superman = heroRepository.findByName("Superman");
@@ -69,9 +70,9 @@ public class AuthController {
         ProgressId pid4 = new ProgressId(hulk,user);
         Progress progress4 = new Progress(pid4,1);
         progressRepository.save(progress4);
-        modelAndView = getAttrs(modelAndView);
+       // modelAndView = getAttrs(modelAndView);
         modelAndView.addObject("user",user.getUsername());
-        modelAndView.setViewName("main");
+        modelAndView.setViewName("login");
         //отправить сообщение с поздравлением о регистрации
         MailSender.send("Добро пожаловать," +user.getUsername()+ "!","Спасибо, что зарегистрировались в Superfight! Прокачивайте героев и сокрушайте врагов!",user.getMail());
         return modelAndView;
@@ -103,59 +104,55 @@ public class AuthController {
         User usr = userRepository.findByUsername(login);
         return usr.getMail();
     }
-    @RequestMapping(value = "/quit",method = RequestMethod.POST)
-    public String quit(){
-        session.invalidate();
-        return "index";
-    }
     @RequestMapping(value = "/remove",method = RequestMethod.POST)
     public String remove(){
-        userRepository.delete(user);
-        return "index";
+        userRepository.delete(userRepository.findByUsername(user.getUsername()));
+        return "login";
     }
     public ModelAndView getAttrs(ModelAndView modelAndView){
         long countwin,countlose,lvl,countloseall=0,countwinall=0;
         ProgressId progressId;
+        User usr = userRepository.findByUsername(user.getUsername());
         superman = heroRepository.findByName("Superman");
         batman = heroRepository.findByName("Batman");
         spiderman = heroRepository.findByName("Spiderman");
         hulk = heroRepository.findByName("Hulk");
         //SUPERMAN
-        countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,superman,"w");
+        countwin = battleRepository.countByUserIdAndHeroIdAndResult(usr,superman,"w");
         modelAndView.addObject("supermanwins",countwin);
-        countlose = battleRepository.countByUserIdAndHeroIdAndResult(user,superman,"l");
+        countlose = battleRepository.countByUserIdAndHeroIdAndResult(usr,superman,"l");
         modelAndView.addObject("supermanloses",countlose);
-        progressId = new ProgressId(superman,user);
+        progressId = new ProgressId(superman,usr);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("supermanlvl",lvl);
         countwinall+=countwin;
         countloseall+=countlose;
         //BATMAN
-        countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,batman,"w");
+        countwin = battleRepository.countByUserIdAndHeroIdAndResult(usr,batman,"w");
         modelAndView.addObject("batmanwins",countwin);
-        countlose = battleRepository.countByUserIdAndHeroIdAndResult(user,batman,"l");
+        countlose = battleRepository.countByUserIdAndHeroIdAndResult(usr,batman,"l");
         modelAndView.addObject("batmanloses",countlose);
-        progressId = new ProgressId(batman,user);
+        progressId = new ProgressId(batman,usr);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("batmanlvl",lvl);
         countwinall+=countwin;
         countloseall+=countlose;
         //SPIDERMAN
-        countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,spiderman,"w");
+        countwin = battleRepository.countByUserIdAndHeroIdAndResult(usr,spiderman,"w");
         modelAndView.addObject("spidermanwins",countwin);
-        countlose = battleRepository.countByUserIdAndHeroIdAndResult(user,spiderman,"l");
+        countlose = battleRepository.countByUserIdAndHeroIdAndResult(usr,spiderman,"l");
         modelAndView.addObject("spidermanloses",countlose);
-        progressId = new ProgressId(spiderman,user);
+        progressId = new ProgressId(spiderman,usr);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("spidermanlvl",lvl);
         countwinall+=countwin;
         countloseall+=countlose;
         //HULK
-        countwin = battleRepository.countByUserIdAndHeroIdAndResult(user,hulk,"w");
+        countwin = battleRepository.countByUserIdAndHeroIdAndResult(usr,hulk,"w");
         modelAndView.addObject("hulkwins",countwin);
-        countlose = battleRepository.countByUserIdAndHeroIdAndResult(user,hulk,"l");
+        countlose = battleRepository.countByUserIdAndHeroIdAndResult(usr,hulk,"l");
         modelAndView.addObject("hulkloses",countlose);
-        progressId = new ProgressId(hulk,user);
+        progressId = new ProgressId(hulk,usr);
         lvl = progressRepository.findById(progressId).getLevel();
         modelAndView.addObject("hulklvl",lvl);
         countwinall+=countwin;
