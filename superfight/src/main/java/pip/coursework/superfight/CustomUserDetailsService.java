@@ -1,12 +1,11 @@
-package service;
+package pip.coursework.superfight;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pip.coursework.superfight.User;
-import pip.coursework.superfight.UserRepository;
+
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     @Autowired

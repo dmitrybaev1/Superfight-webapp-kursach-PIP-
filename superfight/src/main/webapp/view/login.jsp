@@ -5,6 +5,7 @@
         <link href="../css/bootstrap.css" rel="stylesheet">
         <link href="../css/bootstrap-theme.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="../js/bootstrap.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
@@ -39,8 +40,18 @@
                             <button type="button" name="submit" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                                 Зарегистрироваться
                             </button>
+                            <button type="button" id="facebook" class="btn btn-primary">
+                                via Facebook
+                            </button>
+
                         </p>
                     </form>
+                    <form method="post" id="fb" action="/signin/facebook"></form>
+                    <script>
+                        $('#facebook').click(function () {
+                            $('#fb').submit();
+                        });
+                    </script>
                 </div>
             </div>
             <div class="row">
