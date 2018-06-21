@@ -1,7 +1,11 @@
 package pip.coursework.superfight;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.social.security.SocialUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,10 +16,12 @@ import java.util.logging.Logger;
 @Controller
 public class AuthController {
     CustomUserDetails user;
+    SocialUser socialUser;
     Hero superman;
     Hero batman;
     Hero spiderman;
     Hero hulk;
+    String fbUserId;
     @Autowired
     UserRepository userRepository;
     @Autowired
@@ -33,8 +39,20 @@ public class AuthController {
         user = (CustomUserDetails) authentication.getPrincipal();
         modelAndView.addObject("user",user.getUsername());
         //modelAndView.addObject("eff","strrr");
-        modelAndView = getAttrs(modelAndView);
+        modelAndView = getAttrs(modelAndView,false);
         session.setAttribute("user",user.getUsername());
+        session.setAttribute("facebook",false);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/mainfb")
+    public ModelAndView afterLoginFb(Authentication authentication){
+        ModelAndView modelAndView = new ModelAndView();
+        socialUser = (SocialUser)authentication.getPrincipal();
+        modelAndView.addObject("user",socialUser.getUserId());
+        modelAndView = getAttrs(modelAndView,true);
+        session.setAttribute("user",socialUser.getUserId());
+        session.setAttribute("facebook",true);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -45,7 +63,7 @@ public class AuthController {
     @RequestMapping(value = "/reg",method = RequestMethod.POST)
     public ModelAndView reg(@RequestParam("login") String login, @RequestParam("password") String password, @RequestParam("mail") String mail){
         ModelAndView modelAndView = new ModelAndView();
-        User user = new User(login,mail,password,1);
+        User user = new User(login,mail,password,1,false);
         session.setAttribute("user",user);
         userRepository.save(user);
         superman = heroRepository.findByName("Superman");
@@ -71,6 +89,10 @@ public class AuthController {
         MailSender.send("Добро пожаловать," +user.getUsername()+ "!","Спасибо, что зарегистрировались в Superfight! Прокачивайте героев и сокрушайте врагов!",user.getMail());
         return modelAndView;
     }
+    /*@RequestMapping(value = "/signin")
+    public String fb(){
+        return "redirect:/error_login";
+    }*/
     @RequestMapping(value = "/testcreate",method = RequestMethod.POST)
     @ResponseBody
     public String testcreate(@RequestParam("login")String login,@RequestParam("password")String password,@RequestParam("mail")String mail){
@@ -103,10 +125,14 @@ public class AuthController {
         userRepository.delete(userRepository.findByUsername(user.getUsername()));
         return "login";
     }
-    public ModelAndView getAttrs(ModelAndView modelAndView){
+    public ModelAndView getAttrs(ModelAndView modelAndView,boolean isfacebook){
         long countwin,countlose,lvl,countloseall=0,countwinall=0;
         ProgressId progressId;
-        User usr = userRepository.findByUsername(user.getUsername());
+        User usr;
+        if(isfacebook)
+            usr = userRepository.findByUsernameAndIsfacebook(socialUser.getUsername(),isfacebook);
+        else
+            usr = userRepository.findByUsernameAndIsfacebook(user.getUsername(),isfacebook);
         superman = heroRepository.findByName("Superman");
         batman = heroRepository.findByName("Batman");
         spiderman = heroRepository.findByName("Spiderman");

@@ -143,7 +143,8 @@ public class FightController {
         Hero hero = (Hero)session.getAttribute("hero");
         Hero enemy = (Hero)session.getAttribute("enemy");
         String username = (String)session.getAttribute("user");
-        User user = userRepository.findByUsername(username);
+        boolean facebook = (boolean)session.getAttribute("facebook");
+        User user = userRepository.findByUsernameAndIsfacebook(username,facebook);
         Battle battle = new Battle(hero,enemy,user,result);
         battleRepository.save(battle);
         long count = battleRepository.countByUserIdAndHeroIdAndResult(user,hero,"w");
@@ -170,7 +171,7 @@ public class FightController {
             checkHeroName(hero.getName(),modelAndView,p);
             progressRepository.save(p);
         }
-        modelAndView = auth.getAttrs(modelAndView);
+        modelAndView = auth.getAttrs(modelAndView,facebook);
         modelAndView.addObject("user",user.getUsername());
         modelAndView.setViewName("main");
         //Отправить сообщение с итогом боя

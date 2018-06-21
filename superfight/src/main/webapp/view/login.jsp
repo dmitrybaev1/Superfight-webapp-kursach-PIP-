@@ -46,7 +46,7 @@
 
                         </p>
                     </form>
-                    <form method="post" id="fb" action="/signin/facebook"></form>
+                    <form method="post" id="fb" action="/auth/facebook"></form>
                     <script>
                         $('#facebook').click(function () {
                             $('#fb').submit();

@@ -14,6 +14,7 @@ public class User {
     private String mail;
     private String password;
     private int active;
+    private boolean isfacebook;
     @OneToMany(cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
     @JoinTable(name="user_role",joinColumns = @JoinColumn(name="user_id"),inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> role;
@@ -65,14 +66,23 @@ public class User {
         this.role = role;
     }
 
+    public boolean getIsfacebook() {
+        return isfacebook;
+    }
+
+    public void setIsfacebook(boolean isfacebook) {
+        this.isfacebook = isfacebook;
+    }
+
     public User(){
 
     }
-    public User(String login,String mail,String password,int active){
+    public User(String login,String mail,String password,int active,boolean isfacebook){
         this.username = login;
         this.mail = mail;
         this.password = password;
         this.active = active;
+        this.isfacebook = isfacebook;
     }
     public User(User user){
         this.active = user.getActive();
@@ -81,5 +91,8 @@ public class User {
         this.username = user.getUsername();
         this.id =  user.getId();
         this.password = user.getPassword();
+        this.isfacebook = user.getIsfacebook();
     }
+
+
 }

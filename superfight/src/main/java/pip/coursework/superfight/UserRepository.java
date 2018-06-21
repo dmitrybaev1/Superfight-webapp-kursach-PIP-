@@ -10,4 +10,5 @@ import static javafx.scene.input.KeyCode.T;
 public interface UserRepository extends CrudRepository<User,Long> {
     User findByUsernameAndPassword(String login,String password);
     User findByUsername(String login);
+    User findByUsernameAndIsfacebook(String login,boolean facebook);
 }

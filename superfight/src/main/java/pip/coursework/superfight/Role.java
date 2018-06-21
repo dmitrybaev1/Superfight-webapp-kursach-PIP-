@@ -8,14 +8,18 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "roleseq")
     @SequenceGenerator(name = "roleseq",sequenceName = "role_id_seq")
-    private int id;
+    private long id;
     private String role;
     public Role(){}
-    public int getId() {
+    public Role(long id,String role){
+        this.id = id;
+        this.role = role;
+    }
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

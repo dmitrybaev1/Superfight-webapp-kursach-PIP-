@@ -12,6 +12,6 @@ import javax.servlet.http.HttpSession;
 public class StartController {
     @RequestMapping(value = "/")
     public String welcome(){
-        return "redirect:/main";
+        return "redirect:/login";
     }
 }

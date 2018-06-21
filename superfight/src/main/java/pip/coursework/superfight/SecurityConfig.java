@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.encrypt.Encryptors;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.social.config.annotation.SocialConfiguration;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
@@ -22,6 +21,8 @@ import org.springframework.social.connect.mem.InMemoryUsersConnectionRepository;
 import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.connect.web.ProviderSignInController;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
+import org.springframework.social.security.SocialUserDetailsService;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -31,26 +32,23 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    //@SuppressWarnings("all")
-
-
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
     @Autowired
     private FacebookConnectionSignup facebookConnectionSignup;
-    @Bean
+    /*@Bean
     public ConnectionFactoryLocator connectionFactoryLocator(){
         ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
         registry.addConnectionFactory(new FacebookConnectionFactory(
-                "2014806918847089","39ccd277508d5fe5648eca7ca103c87c"
+                "2088465628101600","7734b488d50c5986b41dcf396425f47f"
         ));
         return registry;
     }
     @Bean
     public InMemoryUsersConnectionRepository usersConnectionRepository(){
         return new InMemoryUsersConnectionRepository(connectionFactoryLocator());
-    }
+    }*/
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(customUserDetailsService).passwordEncoder(getPasswordEncoder());
@@ -78,15 +76,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
-                .and().formLogin().loginProcessingUrl("/loginForm")
+                .and().formLogin().loginProcessingUrl("/loginForm").defaultSuccessUrl("/main")
                 .and().formLogin().failureUrl("/error_login").permitAll()
-                .and().logout().logoutSuccessUrl("/login");
+                .and().logout().logoutSuccessUrl("/login")
+                .and().apply(new SpringSocialConfigurer())
+                .postLoginUrl("/mainfb").alwaysUsePostLoginUrl(true);
 
     }
 
-
-
     @Bean
+    public SocialUserDetailsService socialUserDetailsService(){
+        return new SimpleSocialUsersDetailsService(userDetailsService());
+    }
+
+   /* @Bean
     public ProviderSignInController providerSignInController() {
         (usersConnectionRepository())
                 .setConnectionSignUp(facebookConnectionSignup);
@@ -95,5 +98,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 connectionFactoryLocator(),
                 usersConnectionRepository(),
                 new FacebookSignInAdapter());
-    }
+    }*/
 }
