@@ -122,8 +122,11 @@ public class AuthController {
     }
     @RequestMapping(value = "/remove",method = RequestMethod.POST)
     public String remove(){
-        userRepository.delete(userRepository.findByUsername(user.getUsername()));
-        return "login";
+        if(user!=null)
+            userRepository.delete(userRepository.findByUsername(user.getUsername()));
+        else if(socialUser!=null)
+            userRepository.delete(userRepository.findByUsername(socialUser.getUserId()));
+        return "redirect:/logout";
     }
     public ModelAndView getAttrs(ModelAndView modelAndView,boolean isfacebook){
         long countwin,countlose,lvl,countloseall=0,countwinall=0;

@@ -81,10 +81,10 @@
         <div class="container hidden" id="statsplace">
             <div class="row">
                 <div class="col-md-7 text-right" id="avatar-margin">
-                    <img id="avatar" src="../images/bg_main.jpg" alt="image" class="img-thumbnail">
+                    <img id="avatar" alt="image" class="img-thumbnail">
                 </div>
                 <div class="col-md-5 text-right">
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Удалить профиль</button>
+                   <!-- <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Удалить профиль</button>-->
                 </div>
             </div>
             <div class="row">
@@ -183,30 +183,34 @@
             </div>
             <br>
         </div>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+       <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form method="post" action="/remove" class="form-horizontal">
-                        <!-- Заголовок модального окна -->
+
                         <div class="modal-header">
                             <button type="button" id="krestik" class="close" data-dismiss="modal">×</button>
                             <h4 class="modal-title" id="myModalLabel">Вы уверены?</h4>
                         </div>
-                        <!-- Основная часть модального окна, содержащая форму для регистрации -->
+
                         <div class="modal-body">
                             <button id="save" type="submit" class="btn btn-primary">Да</button>
                             <button type="button" id="cancel" class="btn btn-default" data-dismiss="modal">Нет</button>
                         </div>
-                        <!-- Нижняя часть модального окна -->
                         <div class="modal-footer">
 
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
         <form method="post" id="quit" action="/logout" class="hidden"></form>
         <form method="post" id="in-fight" action="/choose" class="hidden"></form>
+        <script>
+            $(document).ready(function () {
+                $("#avatar").attr("src","../images/deleted.jpg");
+            });
+        </script>
         <script>
             $('#exit').click(function () {
                $('#quit').submit();

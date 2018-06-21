@@ -15,6 +15,8 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByUsername(username);
         if(user!=null)
             return new CustomUserDetails(user);
+        else if(user.getIsfacebook())
+            throw new UsernameNotFoundException("not found");
         else
             throw new UsernameNotFoundException("not found");
     }
